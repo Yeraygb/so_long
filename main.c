@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:17:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/06/29 13:27:06 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:45:33 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main (int argc, char **argv)
 {
-	check_errors
+	check_errors(argc, argv);
 	check_map
 }

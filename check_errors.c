@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/06/29 13:34:38 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/06/29 15:57:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include <stdio.h>
-# define BUFFER_SIZE 1
-
-typedef struct s_map
+check_errors(int argc, char **argv)
 {
-	char	**map;
-	ssize_t	fd;
-}	t_map;
+	int i;
 
-#endif
+	if ()
+}
