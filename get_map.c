@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:53:58 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:50:39 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 	ft_strlen;
 } */
 
-void	create_map(t_map *s_map, char **argv)
+void	ft_map(t_game *game, char **argv)
 {
+	int	lines;
 	int	fd;
 
 	fd = open(argv[1], O_RDONLY);
@@ -29,6 +30,11 @@ void	create_map(t_map *s_map, char **argv)
 		ft_putendl_fd("Error to open map", 2);
 	else
 	{
+		lines = get_next_line(fd);
+		while (lines)
+		{
+			
+		}
 	}
-	s_map->map = malloc();
+	game->map.map = malloc();
 }

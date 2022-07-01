@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:53:32 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 13:44:04 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 # define SO_LONG_H
 
 # include <stdio.h>
+# include "./libft/libft.h"
 # define BUFFER_SIZE 1
 
 typedef struct s_map
 {
 	char	**map;
-	ssize_t	fd;
 	int		row;
 	int		col;
 }	t_map;
 
+typedef struct s_game
+{
+	void	*mlx;
+	t_map	map;
+}	t_game;
+
 void	ft_putendl_fd(char *s, int fd);
 void	check_errors(int argc, char **argv);
-void	create_map(t_map *s_map, char **argv);
+void	ft_map(t_game *game, char **argv);
 size_t	ft_strlen(const char *str);
 
 #endif
