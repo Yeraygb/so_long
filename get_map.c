@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:52:39 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 11:53:58 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 	ft_strlen;
 } */
 
-void	check_map(t_map *s_map, char **argv)
+void	create_map(t_map *s_map, char **argv)
 {
 	int	fd;
 
