@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:51:33 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/07/01 11:24:16 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include <stdio.h>
-# define BUFFER_SIZE 1
-
-typedef struct s_map
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	**map;
-	ssize_t	fd;
-	int		row;
-	int		col;
-}	t_map;
+	int	i;
 
-void	ft_putendl_fd(char *s, int fd);
-void	check_errors(int argc, char **argv);
-void	check_map(t_map *s_map, char **argv);
-size_t	ft_strlen(const char *str);
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+		if (s[i + 1] == '\0')
+			write (fd, "\n", 1);
+	}
+}
 
-#endif
+size_t	ft_strlen(const char *str)
+{
+	size_t	count;
+
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
+}

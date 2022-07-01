@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:51:33 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/07/01 11:51:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-# include <stdio.h>
-# define BUFFER_SIZE 1
-
-typedef struct s_map
+/* int	map_long()
 {
-	char	**map;
-	ssize_t	fd;
-	int		row;
-	int		col;
-}	t_map;
+	ft_strlen;
+} */
 
-void	ft_putendl_fd(char *s, int fd);
-void	check_errors(int argc, char **argv);
-void	check_map(t_map *s_map, char **argv);
-size_t	ft_strlen(const char *str);
+void	check_map(t_map *s_map, char **argv)
+{
+	int	fd;
 
-#endif
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		ft_putendl_fd("Error to open map", 2);
+	s_map->map = malloc();
+}
