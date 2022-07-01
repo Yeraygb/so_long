@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:51:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 11:52:39 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ void	check_map(t_map *s_map, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		ft_putendl_fd("Error to open map", 2);
+	else
+	{
+	}
 	s_map->map = malloc();
 }
