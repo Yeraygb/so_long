@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 15:38:51 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:49:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,7 @@ void	ft_map(t_game *game, char **argv)
 
 	lines = count_line(argv);
 	game->map.map = malloc(sizeof(char *) * lines + 1);
+	if (!game->map.map)
+		return (0);
+	
 }
