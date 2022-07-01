@@ -6,35 +6,21 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 11:24:16 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:14:05 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	free_double_array(char **trash)
 {
 	int	i;
 
 	i = 0;
-	if (s)
+	while (trash[i])
 	{
-		while (s[i])
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-		if (s[i + 1] == '\0')
-			write (fd, "\n", 1);
+		free(trash[i]);
+		i++;
 	}
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	free(trash);
 }

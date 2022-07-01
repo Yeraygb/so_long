@@ -6,11 +6,11 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:36:30 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/06/29 13:36:34 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:09:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
 char	*ft_read(int fd, char *savebuf)
 {

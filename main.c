@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:17:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 13:44:10 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:03:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_map	*s_map;
-	t_game	*s_game;
+	t_program	*s_program;
 
 	check_errors(argc, argv);
-	ft_map(&s_game, argv);
+	ft_map(s_program, argv);
 }

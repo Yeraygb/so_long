@@ -6,11 +6,11 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:44:29 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/06/29 13:37:36 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:04:23 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
 size_t	ft_strlen_gnl(const char *str)
 {

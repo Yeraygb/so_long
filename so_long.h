@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 16:35:58 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:32:55 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include "./libft/libft.h"
+# include "mlx.h"
 # define BUFFER_SIZE 1
 
 typedef struct s_map
@@ -24,15 +25,24 @@ typedef struct s_map
 	int		col;
 }	t_map;
 
-typedef struct s_game
+typedef struct s_program
 {
-	void	*mlx;
+	void	*mlx_pointer;
+	void	*window;
 	t_map	map;
-}	t_game;
+}	t_program;
 
-void	ft_putendl_fd(char *s, int fd);
 void	check_errors(int argc, char **argv);
-void	ft_map(t_game *game, char **argv);
-size_t	ft_strlen(const char *str);
+void	ft_map(t_program *program, char **argv);
+void	free_double_array(char **trash);
+int		count_lines(char **argv);
+
+//-.-.-.-.-.-.-mlx-.-.-.-.-.-.-//
+
+void	*mlx_new_image(void *mlx_ptr, int width, int height);
+void	*mlx_xpm_file_to_image(void *mlx_pointer, char *relative_path, \
+		int *width, int *height);
+char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, \
+		int *endian);
 
 #endif
