@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 19:32:55 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:45:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ typedef struct s_map
 	int		col;
 }	t_map;
 
+typedef struct s_format
+{
+	void	*format;
+}	t_format;
+
 typedef struct s_program
 {
-	void	*mlx_pointer;
-	void	*window;
-	t_map	map;
+	void		*mlx_pointer;
+	void		*window;
+	t_map		*map;
+	t_format	*format;
 }	t_program;
 
 void	check_errors(int argc, char **argv);

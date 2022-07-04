@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/01 19:37:43 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:02:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,17 @@ void	ft_map(t_program *program, char **argv)
 {
 	int	lines;
 
-	program = malloc (sizeof(t_program));
-	if (!program)
+	program->map = malloc (sizeof(t_map));
+	if (!program->map)
 	{
-		free(program);
+		free(program->map);
 		return ;
 	}
 	lines = count_lines(argv);
-	program->map.map = malloc(sizeof(char *) * lines + 1);
-	if (!program->map.map)
+	program->map->map = malloc(sizeof(char *) * lines + 1);
+	if (!program->map->map)
 	{
-		free_double_array(program->map.map);
+		free_double_array(program->map->map);
 		return ;
 	}
 }
