@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/04 15:02:09 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:10:26 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,6 @@ void	ft_map(t_program *program, char **argv)
 		free_double_array(program->map->map);
 		return ;
 	}
+	program->map->row = ft_strlen(program->map->map[0]);
+	program->map->col = count_lines(argv);
 }

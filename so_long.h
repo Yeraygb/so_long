@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/04 14:45:49 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:13:10 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include "./libft/libft.h"
-# include "mlx.h"
+# include "./minilibx/mlx.h"
 # define BUFFER_SIZE 1
 
 typedef struct s_map
