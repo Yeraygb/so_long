@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/04 15:10:26 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:51:29 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-/* int	map_long()
-{
-	ft_strlen;
-} */
 
 int	count_lines(char **argv)
 {
@@ -41,7 +36,22 @@ int	count_lines(char **argv)
 		}
 		close(fd);
 	}
-	return (count++);
+	return (count);
+}
+
+void	check_map(t_program *program, char **argv)
+{
+	int	fd;
+
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		ft_putendl_fd("Map error", 2);
+	else
+	{
+		program->map->map = malloc (sizeof(t_program));
+		program->map->row = ft_strlen(program->map->map[0]);
+		program->map->col = count_lines(argv);
+	}
 }
 
 void	ft_map(t_program *program, char **argv)
@@ -61,6 +71,5 @@ void	ft_map(t_program *program, char **argv)
 		free_double_array(program->map->map);
 		return ;
 	}
-	program->map->row = ft_strlen(program->map->map[0]);
-	program->map->col = count_lines(argv);
+	check_map(&program, argv);
 }
