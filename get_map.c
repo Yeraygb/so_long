@@ -24,7 +24,7 @@ int	count_lines(char **argv)
 	count = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_putendl_fd("Error to open map", 2);
+		printf("Error to open map");
 	else
 	{
 		line = get_next_line(fd);
@@ -42,23 +42,24 @@ int	count_lines(char **argv)
 void	check_map(t_program *program, char **argv)
 {
 	int	fd;
+	int size;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_putendl_fd("Map error", 2);
-	else
-	{
-		program->map->map = malloc (sizeof(t_program));
-		program->map->row = ft_strlen(program->map->map[0]);
-		program->map->col = count_lines(argv);
-	}
+		return (0);
+	program->map->map = malloc(sizeof(char **) * 1);
+	if (!program->map->map)
+		return (0);
+	size = get_next_line (fd);
+	program->map->row = ft_strlen(program->map->map[0]);
+	program->map->col = count_lines(argv);
 }
 
 void	ft_map(t_program *program, char **argv)
 {
 	int	lines;
 
-	program->map = malloc (sizeof(t_map));
+	program->map = malloc (sizeof(t_program));
 	if (!program->map)
 	{
 		free(program->map);
