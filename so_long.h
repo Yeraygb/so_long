@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/05 12:40:38 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/07 16:30:15 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 typedef struct s_map
 {
 	char	**map;
-	int		row;
-	int		col;
+	int		length;
+	int		height;
 }	t_map;
 
 typedef struct s_format
