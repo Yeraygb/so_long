@@ -14,5 +14,5 @@
 
 void get_sprites(t_program *program)
 {
-    
+    program->sprites->pj = 
 }
