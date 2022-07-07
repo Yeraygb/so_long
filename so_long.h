@@ -30,12 +30,21 @@ typedef struct s_format
 	void	*format;
 }	t_format;
 
+typedef struct s_sprites
+{
+	char	*pj;
+	char	*wall;
+	char	*floor;
+	char	*exit_game;
+}	t_sprites;
+
 typedef struct s_program
 {
 	void		*mlx_pointer;
 	void		*window;
 	t_map		*map;
 	t_format	*format;
+	t_sprites	*sprites;
 }	t_program;
 
 void	check_errors(int argc, char **argv);

@@ -21,6 +21,4 @@ int	main(int argc, char **argv)
 	s_program.mlx_pointer = mlx_init();
 	s_program.format->format = mlx_new_window(s_program.mlx_pointer, \
 		s_program.map->length * 64, s_program.map->height * 64, "POKEMON'T");
-	*mlx_xpm_file_to_image(s_program.mlx_pointer, , \
-		s_program.map->length, s_program.map->height);
-}
+	get_sprites(&s_program);

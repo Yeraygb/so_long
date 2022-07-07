@@ -54,8 +54,8 @@ void	check_map(t_program *program, char **argv)
 	size = get_next_line (fd);
 	split_map = ft_split(size, "\n");
 	free(size);
-	program->map->row = ft_strlen(split_map[0]);
-	program->map->col = count_lines(argv);
+	program->map->length = ft_strlen(split_map[0]);
+	program->map->height = count_lines(argv);
 	close(fd);
 }
 
