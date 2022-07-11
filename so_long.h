@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/08 12:08:43 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/08 15:10:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct s_sprites
 typedef struct s_image
 {
 	void		*pointer;
-	t_vector	size;
 	char		*pixels;
 	int			bits_per_pixel;
 	int			line_size;
@@ -56,18 +55,21 @@ typedef struct s_program
 	void		*window;
 	t_map		*map;
 	t_format	*format;
-	t_sprites	*sprites;
+	t_image		*floor;
+	t_image		*wall;
 }	t_program;
 
-void	check_errors(int argc, char **argv);
+void	check_errors(int argc);
 void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
 int		count_lines(char **argv);
 void	check_map(t_program *program, char **argv);
+void	get_sprites(t_program *program);
 
 //-.-.-.-.-.-.-mlx-.-.-.-.-.-.-//
 
-/* void	*mlx_new_image(void *mlx_ptr, int width, int height);
+/*
+void	*mlx_new_image(void *mlx_ptr, int width, int height);
 void	*mlx_xpm_file_to_image(void *mlx_pointer, char *relative_path, \
 		int *width, int *height);
 char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, \
@@ -75,6 +77,7 @@ char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, \
 int		mlx_hook(void *win_ptr, int event, int mask, int (*f)(), void *param);
 int		mlx_loop_hook(void *mlx_ptr, int (*f)(), void *param);
 int		mlx_key_hook(void *win_ptr, int (*f)(), void *param);
-int		mlx_destroy_image(void *mlx_ptr, void *img_ptr); */
+int		mlx_destroy_image(void *mlx_ptr, void *img_ptr);
+*/
 
 #endif

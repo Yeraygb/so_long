@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/07 16:19:30 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/07/08 14:30:32 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ int	count_lines(char **argv)
 void	check_map(t_program *program, char **argv)
 {
 	int		fd;
-	char	size;
+	char	*size;
 	char	**split_map;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (0);
+		return ;
 	program->map->map = malloc(sizeof(char **) * 1);
 	if (!(program->map)->map)
-		return (0);
+		return ;
 	size = get_next_line (fd);
-	split_map = ft_split(size, "\n");
+	split_map = ft_split(size, '\n');
 	free(size);
 	program->map->length = ft_strlen(split_map[0]);
 	program->map->height = count_lines(argv);
