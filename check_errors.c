@@ -6,13 +6,13 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/08 15:02:45 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/05 12:53:43 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_errors(int argc)
+void	check_argc_errors(int argc)
 {
 	int	i;
 

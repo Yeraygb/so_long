@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/08 14:30:32 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/05 12:57:29 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	ft_map(t_program *program, char **argv)
 		free_double_array(program->map->map);
 		return ;
 	}
-	check_map(program, argv);
+	if(!check_map(program, argv))
+		return(printf("Wrong map"))
 }
