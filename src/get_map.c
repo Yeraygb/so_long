@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/05 15:05:09 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:19:59 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+void	walls_checker(t_program program)
+{
+	
+}
 
 int	count_lines(char **argv)
 {
