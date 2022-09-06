@@ -6,21 +6,22 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/05 15:19:59 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:29:59 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 #include <fcntl.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 void	walls_checker(t_program program)
 {
-	
+	int	i;
+
+	i = 0;
 }
 
-int	count_lines(char **argv)
+int	count_lines(char **argv, t_program *program)
 {
 	char	*line;
 	int		fd;
@@ -35,6 +36,7 @@ int	count_lines(char **argv)
 		line = get_next_line(fd);
 		while (line)
 		{
+			program->map->read = ft_strjoin(program->map->read, line);
 			count++;
 			free(line);
 			line = get_next_line(fd);
@@ -52,35 +54,19 @@ void	check_map(t_program *program, char **argv)
 
 	program->map->length = 0;
 	program->map->height = 0;
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-		return ;
-	program->map->map = malloc(sizeof(char **) * 1);
-	if (!(program->map)->map)
-		return ;
-	size = get_next_line (fd);
-	split_map = ft_split(size, '\n');
-	free(size);
-	program->map->length = ft_strlen(split_map[0]);
-	program->map->height = count_lines(argv);
-	close(fd);
+	program->map->map = ft_split(program->map->read, '\n');
+	program->map->length = ft_strlen(program->map->map[0]);
+	program->map->height = count_lines(argv, program);
 }
 
 void	ft_map(t_program *program, char **argv)
 {
 	program->map = malloc (sizeof(t_program));
 	if (!program->map)
-	{
-		free(program->map);
-		return ;
-	}
-	program->map->lines = count_lines(argv);
-	//count_lines(argv, program)
+		return (NULL);
+	program->map->lines = count_lines(argv, program);
 	program->map->map = malloc(sizeof(char *) * program->map->lines + 1);
 	if (!program->map->map)
-	{
-		free_double_array(program->map->map);
-		return ;
-	}
+		return (NULL);
 	check_map(program, argv);
 }

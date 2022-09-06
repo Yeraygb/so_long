@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:36:52 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/05/23 10:19:11 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/06 11:07:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@
 # include <fcntl.h>
 # include <unistd.h>
 
+# define BUFFER_SIZE 1
+
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *bufread);
 size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(char *s, int c);
+char	*ft_strchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		line_jump(char *savebuf);
 char	*ft_strdup(char *s1);

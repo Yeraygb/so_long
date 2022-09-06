@@ -6,11 +6,11 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/07/08 14:20:08 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/06 10:42:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	get_sprites(t_program *program)
 {

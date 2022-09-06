@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/05 15:07:34 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:28:33 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 # include "../minilibx/mlx.h"
 # include "get_next_line.h"
 
-# define BUFFER_SIZE 1
-
 typedef struct s_map
 {
 	char	**map;
 	int		length;
 	int		height;
 	int		lines;
+	char	*read;
 }	t_map;
 
 typedef struct s_format
@@ -64,11 +63,12 @@ typedef struct s_program
 void	check_argc_errors(int argc);
 void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
-int		count_lines(char **argv);
+int		count_lines(char **argv, t_program *program);
 void	check_map(t_program *program, char **argv);
 void	get_sprites(t_program *program);
 size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
+void	ft_putendl_fd(char *s, int fd);
 
 //-.-.-.-.-.-.-mlx-.-.-.-.-.-.-//
 
