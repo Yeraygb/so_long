@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/06 14:29:59 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/08 11:17:44 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-void	walls_checker(t_program program)
+/* void	walls_checker(t_program program)
 {
 	int	i;
 
 	i = 0;
-}
+} */
 
 int	count_lines(char **argv, t_program *program)
 {
@@ -48,10 +48,6 @@ int	count_lines(char **argv, t_program *program)
 
 void	check_map(t_program *program, char **argv)
 {
-	int		fd;
-	char	*size;
-	char	**split_map;
-
 	program->map->length = 0;
 	program->map->height = 0;
 	program->map->map = ft_split(program->map->read, '\n');
@@ -63,10 +59,10 @@ void	ft_map(t_program *program, char **argv)
 {
 	program->map = malloc (sizeof(t_program));
 	if (!program->map)
-		return (NULL);
+		return ;
 	program->map->lines = count_lines(argv, program);
 	program->map->map = malloc(sizeof(char *) * program->map->lines + 1);
 	if (!program->map->map)
-		return (NULL);
+		return ;
 	check_map(program, argv);
 }
