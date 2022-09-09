@@ -6,20 +6,13 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/08 11:17:44 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/09 13:36:40 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 #include <fcntl.h>
 #include <stdlib.h>
-
-/* void	walls_checker(t_program program)
-{
-	int	i;
-
-	i = 0;
-} */
 
 int	count_lines(char **argv, t_program *program)
 {
