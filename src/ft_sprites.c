@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/09 15:14:15 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/09 15:17:43 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	get_sprites(t_program *program)
 	y = 0;
 	printf("entra en get sprites");
 	save_images(program);
-	while (y < (program->map)->height)
+	while (y < program->map->height)
 	{
 		x = 0;
-		while ((program->map)->map[x][y])
+		while (program->map->map[x][y])
 		{
 			sprites_to_windows(program, x, y);
 			x++;
