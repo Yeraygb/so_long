@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/08 11:24:56 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/09 10:46:12 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ fclean: clean
 	@rm -f $(NAME)
 	@rm -rf so_long
 	@make -C minilibx clean
+	@rm -f libmlx.a
 
 re: fclean all
 
