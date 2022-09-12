@@ -5,117 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 12:36:30 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/06 11:06:24 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/05/07 15:10:03 by dilopez-          #+#    #+#             */
+/*   Updated: 2022/09/12 13:26:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
+#define BUFFER_SIZE 42
 
-char	*ft_read(int fd, char *savebuf)
+char	*ft_read_buffer_nl(char *str, int fd, size_t *bytes_read)
 {
-	ssize_t	nr_bytes;
-	char	*buf;
+	char	*aux;
+	char	buffer[BUFFER_SIZE + 1];
 
-	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buf)
-		return (NULL);
-	nr_bytes = 1;
-	while (!ft_strchr(savebuf, '\n') && nr_bytes != 0)
+	aux = ft_strjoin(str, "");
+	while (*bytes_read > 0 && ft_strnl(aux) == -1)
 	{
-		nr_bytes = read(fd, buf, BUFFER_SIZE);
-		if (nr_bytes == -1)
+		*bytes_read = read(fd, buffer, BUFFER_SIZE);
+		if ((int)*bytes_read <= 0)
 		{
-			free (buf);
+			if ((int)*bytes_read == 0)
+				return (aux);
+			free(aux);
 			return (NULL);
 		}
-		if (nr_bytes == 0)
-			break ;
-		buf[nr_bytes] = '\0';
-		savebuf = ft_strjoin(savebuf, buf);
+		buffer[*bytes_read] = '\0';
+		if (!aux)
+			aux = ft_substr(buffer, 0, BUFFER_SIZE);
+		else
+			aux = ft_strjoin(aux, buffer);
 	}
-	free (buf);
-	return (savebuf);
-}
-
-int	line_jump(char *savebuf)
-{
-	int		i;
-
-	i = 0;
-	while (savebuf[i])
-	{
-		if (savebuf[i] == '\n')
-			return (++i);
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_substr_line(char *savebuf)
-{
-	char	*str;
-	size_t	i;
-	size_t	n;
-
-	i = 0;
-	n = line_jump(savebuf);
-	if (!savebuf[i])
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * (n + 2));
-	if (!str)
-		return (NULL);
-	while (savebuf[i] && savebuf[i] != '\n')
-	{
-		str[i] = savebuf[i];
-		i++;
-	}
-	if (savebuf[i] == '\n')
-	{
-		str[i] = savebuf[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-char	*ft_substr_static(char *s)
-{
-	char	*str;
-	size_t	j;
-	size_t	n;
-
-	n = line_jump(s);
-	if (!s[n])
-	{
-		free (s);
-		return (NULL);
-	}
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) - n + 1));
-	if (!str)
-		return (NULL);
-	j = 0;
-	while (s[n])
-		str[j++] = s[n++];
-	str[j] = '\0';
-	free (s);
-	return (str);
+	return (aux);
 }
 
 char	*get_next_line(int fd)
 {
+	static char	*str;
+	char		*aux;
 	char		*line;
-	static char	*savebuf;
+	size_t		bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	bytes_read = BUFFER_SIZE;
+	aux = ft_strjoin(str, "");
+	str = NULL;
+	if (fd == -1)
 		return (NULL);
-	savebuf = ft_read(fd, savebuf);
-	if (!savebuf)
-	{
-		free (savebuf);
+	aux = ft_read_buffer_nl(aux, fd, &bytes_read);
+	if (!aux)
 		return (NULL);
-	}
-	line = ft_substr_line(savebuf);
-	savebuf = ft_substr_static(savebuf);
+	line = ft_substr(aux, 0, ft_strnl(aux));
+	str = ft_substr(aux, ft_strnl(aux), ft_strlen(aux));
+	if (bytes_read <= 0)
+		free(str);
+	free(aux);
 	return (line);
 }

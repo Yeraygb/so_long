@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dilopez- <dilopez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 12:36:52 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/06 11:07:49 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/04/30 09:27:04 by dilopez-          #+#    #+#             */
+/*   Updated: 2022/05/08 11:07:23 by dilopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-# include <fcntl.h>
-# include <unistd.h>
+// ========== Include ==========
 
-# define BUFFER_SIZE 1
+//# include <stdio.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+
+// ========== Prototypes ==========
 
 char	*get_next_line(int fd);
-char	*ft_read(int fd, char *bufread);
-size_t	ft_strlen(const char *str);
+
+// ========== Utils ==========
+
+void	*ft_calloc(size_t count, size_t size);
+size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(const char *s, int c);
+int		ft_strnl(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		line_jump(char *savebuf);
-char	*ft_strdup(char *s1);
-char	*ft_substr_line(char *savebuf);
-char	*ft_substr_static(char *s);
 
 #endif

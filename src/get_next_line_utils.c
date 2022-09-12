@@ -5,84 +5,114 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 12:44:29 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/06 10:57:58 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/04/30 09:20:31 by dilopez-          #+#    #+#             */
+/*   Updated: 2022/09/12 13:26:29 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/get_next_line.h"
 
-size_t	ft_strlen_gnl(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	count;
+	void	*str;
+	size_t	i;
 
-	count = 0;
-	if (!str)
-		return (0);
-	while (str[count])
-		count++;
-	return (count);
+	i = -1;
+	str = (void *)malloc(count * size);
+	if (str == NULL)
+		return (NULL);
+	while (++i < (count * size))
+		((unsigned char *)str)[i] = '\0';
+	return (str);
 }
 
-/*
-** Reserva y devuelve una nueva string,
-** formada por la concatenación de ’s1’ y ’s2’.
-**
-** @param {char const s1} Primera string
-** @param {char const s2} Segunda string
-** 
-** @return {char *} La string concatenada resultante
-*/
-char	*ft_strjoin_gnl(char *s1, char *s2)
+size_t	ft_strlen(const char *s)
 {
-	char	*str;
-	int		i;
-	int		n;
+	int	size;
 
-	if (!s1)
-	{
-		s1 = (char *)malloc(sizeof(char) * 1);
-		s1[0] = '\0';
-	}
+	size = 0;
+	while (s[size])
+		size++;
+	return (size);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char			*str;
+	unsigned int	size;
+	int				i;
+	int				j;
+
 	if (!s1 || !s2)
 		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	size = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(size + 1);
 	if (!str)
 		return (NULL);
 	i = -1;
-	n = 0;
-	if (s1)
-		while (s1[++i] != '\0')
-			str[i] = s1[i];
-	while (s2[n] != '\0')
-		str[i++] = s2[n++];
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	while (s1[++i])
+		str[i] = s1[i];
+	j = 0;
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[size] = '\0';
 	free(s1);
 	return (str);
 }
 
-/*
-** Funcion busca el primer caracter que coincide en 2 strings
-**
-** @param {const char *s} La string en la que se quiere buscar un parametro
-** @param {int c} El parametro que quieres buscar
-**
-** @return {char} La direc de la *s desde que ha encontrado la 1º coincidencia
-*/
-char	*ft_strchr_gnl(char *s, int c)
+int	ft_strnl(const char *s)
 {
-	int		i;
+	int	i;
+	int	find;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	if (c == '\0')
-		return ((char *)&s[i]);
-	while (s[i])
+	if (!s || s[0] == '\0')
+		return (-1);
+	if ((char)s[0] == '\n')
+		return (-2);
+	while (s[i] && (char)s[i] != '\n')
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
+		if ((char)s[i] != '\n')
+			find = 1;
 		i++;
 	}
-	return (NULL);
+	if (s[i] == '\0')
+		return (-1);
+	if (find == 1)
+		return (++i);
+	else
+		return (-1);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char		*str;
+	size_t		index;
+
+	if (!s)
+		return (NULL);
+	if ((int)len == -2)
+		len = 1;
+	if ((int) start == -2)
+		start = 1;
+	if (start >= ft_strlen(s) || len <= 0)
+		return (NULL);
+	index = 0;
+	if (len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	str = (char *)malloc((len + 1) * sizeof(*str));
+	if (!str)
+		return (NULL);
+	while (s[start] && index < len)
+	{
+		str[index] = s[start];
+		index++;
+		start++;
+	}
+	str[index] = '\0';
+	return (str);
 }

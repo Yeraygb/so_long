@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/09 13:22:21 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/12 13:37:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ typedef struct s_program
 {
 	void		*mlx_pointer;
 	void		*window;
-	t_map		*map;
+	t_map		map;
 	t_format	format;
-	t_sprites	*sprites;
-	t_image		*floor;
-	t_image		*wall;
+	t_sprites	sprites;
+	t_image		floor;
+	t_image		wall;
 }	t_program;
 
 void	check_argc_errors(int argc);
@@ -66,7 +66,6 @@ void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
 int		count_lines(char **argv, t_program *program);
 void	check_map(t_program *program, char **argv);
-size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 void	ft_putendl_fd(char *s, int fd);
 void	get_sprites(t_program *program);

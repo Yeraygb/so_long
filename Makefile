@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/09 10:46:12 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/12 14:45:41 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,12 @@ SRC = main.c \
 	src/check_errors.c \
 	src/ft_split.c \
 	src/ft_strchr.c \
-	src/ft_strjoin.c \
-	src/ft_substr.c \
 	src/get_next_line.c \
 	src/get_next_line_utils.c
 
 OBJS = $(SRC:.c=.o)
-LINKS =	-L . -lmlx -framework OpenGL -framework AppKit
-FLAGS = gcc  -g
+LINKS =	-L . -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g3
+FLAGS = gcc  
 
 $(NAME): $(OBJS)
 	@echo ✅ "\033[92;3;4mcompilation done\033[0m" ✅
