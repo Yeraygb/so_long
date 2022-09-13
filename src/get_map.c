@@ -6,13 +6,14 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 13:16:26 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:57:58 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 #include <fcntl.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	count_lines(char **argv, t_program *program)
 {
@@ -26,9 +27,7 @@ int	count_lines(char **argv, t_program *program)
 	else
 	{
 		program->line = get_next_line(fd);
-		printf("line:%zu\n", ft_strlen(program->line));
-		program->save_x = program->line;
-		printf("save_x:%zu\n", ft_strlen(program->save_x));
+		program->save_x = ft_substr(program->line, 0, ft_strlen(program->line));
 		program->map.read = malloc(sizeof(char));
 		program->map.read[0] = '\0';
 		while (program->line)
@@ -63,8 +62,6 @@ void	ft_map(t_program *program, char **argv)
 	/* if (!program->map)
 		return ; */
 	program->map.lines = count_lines(argv, program);
-/* 	while (program->map.read != '\n')
-		x++; */
 	program->map.map = malloc(sizeof(char *) * program->map.lines + 1);
 	if (!program->map.map)
 		return ;
@@ -74,7 +71,7 @@ void	ft_map(t_program *program, char **argv)
 	while (y < program->map.lines)
 	{
 		program->map.map[y] = malloc(sizeof(char) \
-			* ft_strlen(program->save_x) + 2);
+			* ft_strlen(program->save_x) + 1);
 		y++;
 	}	
 	check_map(program, argv);

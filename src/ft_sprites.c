@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 13:05:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:55:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	sprites_to_windows(t_program *program, int x, int y)
 	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.wall, x * 64, y * 64);
-	} */
+	}
+	*/
 }

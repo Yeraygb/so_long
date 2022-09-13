@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/13 13:00:47 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/13 13:57:19 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = main.c \
 	src/get_next_line_utils.c
 
 OBJS = $(SRC:.c=.o)
-LINKS =	-L . -lmlx -framework OpenGL -framework AppKit
+LINKS =	-L . -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g3
 FLAGS = gcc  
 
 $(NAME): $(OBJS)
