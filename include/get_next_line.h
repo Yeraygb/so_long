@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilopez- <dilopez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 09:27:04 by dilopez-          #+#    #+#             */
-/*   Updated: 2022/05/08 11:07:23 by dilopez-         ###   ########.fr       */
+/*   Created: 2022/09/13 10:16:13 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/09/13 10:48:45 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-// ========== Include ==========
+// ---------- Include ---------- //
 
-//# include <stdio.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 
-// ========== Prototypes ==========
+// ---------- Prototypes ---------- //
 
 char	*get_next_line(int fd);
 
-// ========== Utils ==========
+// ---------- Utils ---------- //
 
 void	*ft_calloc(size_t count, size_t size);
 size_t	ft_strlen(const char *s);

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/12 13:37:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/13 12:49:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_program
 {
 	void		*mlx_pointer;
 	void		*window;
+	char		*line;
+	char		*save_x;
 	t_map		map;
 	t_format	format;
 	t_sprites	sprites;
