@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:29:15 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/14 15:50:38 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 16:17:07 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,16 @@ void	a_d(int keycode, t_program *program)
 	}
 }
 
-/* void	w_s()
+void	w_s(int keycode, t_program *program)
+{
+	int	x;
+	int	y;
 
-void	exit_program()
- */
+	x = program->pj.width;
+	y = program->pj.height;
+	if (keycode == 1)
+	{
+	}
+}
+
+//void	exit_program()
