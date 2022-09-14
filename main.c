@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:17:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 10:51:01 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 13:43:19 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	main(int argc, char **argv)
 	program.format.format = mlx_new_window(program.mlx_pointer, \
 		program.map.length * 64, program.map.height * 64, "POKEMON'T");
 	get_sprites(&program);
+	mlx_key_hook(program.format.format, key_hooks, &program);
 	mlx_loop(program.mlx_pointer);
 }

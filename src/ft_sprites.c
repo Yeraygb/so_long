@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/14 11:54:05 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 12:25:19 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,15 @@ void	sprites_to_windows(t_program *program, int x, int y)
 	mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 		program->sprites.floor, x * 64, y * 64);
 	if ((program->map).map[y][x] == '1')
-	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.wall, x * 64, y * 64);
-	}
 	if ((program->map).map[y][x] == 'P')
-	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.pj, x * 64, y * 64);
-	}
 	if ((program->map).map[y][x] == 'C')
-	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.collect, x * 64 + 20, y * 64 + 20);
-	}
 	if ((program->map).map[y][x] == 'E')
-	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.exit, x * 64 + 16, y * 64 + 16);
-	}
 }
