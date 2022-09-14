@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/14 10:28:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 11:53:53 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	count_lines(char **argv, t_program *program)
 		program->map.read[0] = '\0';
 		while (program->line)
 		{
-			printf("line:%s\n", program->line);
 			program->map.read = ft_strjoin(program->map.read, program->line);
 			count++;
 			free(program->line);
@@ -40,7 +39,6 @@ int	count_lines(char **argv, t_program *program)
 		}
 		close(fd);
 	}
-	printf("count:%d\n", count);
 	return (count);
 }
 
