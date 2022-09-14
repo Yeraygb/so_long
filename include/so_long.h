@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 13:48:59 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:49:22 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_sprites
 	char	*pj;
 	char	*wall;
 	char	*floor;
+	char	*collect;
 	char	*exit_game;
 }	t_sprites;
 
@@ -61,6 +62,8 @@ typedef struct s_program
 	t_sprites	sprites;
 	t_image		floor;
 	t_image		wall;
+	t_image		pj;
+	t_image		collect;
 }	t_program;
 
 void	check_argc_errors(int argc);

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 14:55:13 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:52:56 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,35 @@ void	get_sprites(t_program *program)
 
 void	save_images(t_program *program)
 {
-	printf("entra en save images\n");
 	program->sprites.floor = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/floor.xpm", &program->floor.width, &program->floor.height);
-	printf("floor:%s\n", program->sprites.floor);
-	program->sprites .wall = mlx_xpm_file_to_image(program->mlx_pointer, \
+	//printf("floor:%s\n", program->sprites.floor);
+	program->sprites.wall = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/walls.xpm", &program->wall.width, &program->wall.height);
-	printf("walls:%s\n", program->sprites.wall);
+	program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/character.xpm", &program->pj.width, &program->pj.height);
+	program->sprites.collect = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/collectable.xpm", &program->collect.width, \
+		&program->collect.height);
 }
 
 void	sprites_to_windows(t_program *program, int x, int y)
 {
-	//printf("entra en sprite window\n");
 	mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 		program->sprites.floor, x * 64, y * 64);
-	//printf("x y: %d , %d\n", x, y);
-	//printf("map: %c\n", (program->map.map)[x][y]);
-/* 	if ((program->map).map[x][y] == '1')
+	if ((program->map).map[y][x] == '1')
 	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.wall, x * 64, y * 64);
 	}
-	*/
+	if ((program->map).map[y][x] == 'P')
+	{
+		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
+			program->sprites.pj, x * 64, y * 64);
+	}
+	if ((program->map).map[y][x] == 'C')
+	{
+		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
+			program->sprites.collect, x * 64, y * 64);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/13 14:57:58 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:28:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,25 @@ void	check_map(t_program *program, char **argv)
 	program->map.map = ft_split(program->map.read, '\n');
 	program->map.length = ft_strlen(program->map.map[0]);
 	program->map.height = program->map.lines;
-	//printf("height:%d\n", program->map.height);
 }
 
 void	ft_map(t_program *program, char **argv)
 {
-	int	y;
-	//int	x;
+	program->map.lines = count_lines(argv, program);
+	check_map(program, argv);
+}
+
+/* 	program->map.map = malloc(sizeof(char *) * program->map.lines + 1);
+	if (!program->map.map)
+		return ; */
 	//program->map.map = malloc (sizeof(t_program));
 	/* if (!program->map)
 		return ; */
-	program->map.lines = count_lines(argv, program);
-	program->map.map = malloc(sizeof(char *) * program->map.lines + 1);
-	if (!program->map.map)
-		return ;
-	y = 0;
 	//printf("line:%zu\n", ft_strlen(program->line));
-	printf("save_x:%zu\n", ft_strlen(program->save_x));
-	while (y < program->map.lines)
+	//printf("save_x:%zu\n", ft_strlen(program->save_x));
+/* 	while (y < program->map.lines)
 	{
 		program->map.map[y] = malloc(sizeof(char) \
 			* ft_strlen(program->save_x) + 1);
 		y++;
-	}	
-	check_map(program, argv);
-}
+	}	 */
