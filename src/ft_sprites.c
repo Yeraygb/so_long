@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/14 10:52:56 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/14 11:03:30 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,11 @@ void	get_sprites(t_program *program)
 	while (y < program->map.height)
 	{
 		x = 0;
-		//printf("entra en el bucle\n");
 		while (x < program->map.length)
 		{
 			sprites_to_windows(program, x, y);
 			x++;
-			//printf("x y: %d , %d\n", x, y);
 		}
-		//printf("height2:%d\n", program->map.height);
 		y++;
 	}
 	printf("saveimage\n");
@@ -41,7 +38,6 @@ void	save_images(t_program *program)
 {
 	program->sprites.floor = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/floor.xpm", &program->floor.width, &program->floor.height);
-	//printf("floor:%s\n", program->sprites.floor);
 	program->sprites.wall = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/walls.xpm", &program->wall.width, &program->wall.height);
 	program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
