@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/14 15:49:57 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/16 12:38:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	save_images(t_program *program)
 	program->sprites.wall = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/walls.xpm", &program->wall.width, &program->wall.height);
 	program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
-		"./sprites/pjface.xpm", &program->pj.width, &program->pj.height);
+		"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 	program->sprites.collect = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/collectable.xpm", &program->collect.width, \
 		&program->collect.height);
