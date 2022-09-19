@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/16 12:38:20 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:26:42 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	get_sprites(t_program *program)
 	int	y;
 
 	y = 0;
-	save_images(program);
 	while (y < program->map.height)
 	{
 		x = 0;
@@ -54,8 +53,12 @@ void	sprites_to_windows(t_program *program, int x, int y)
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.wall, x * 64, y * 64);
 	if ((program->map).map[y][x] == 'P')
+	{
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.pj, x * 64 + 10, y * 64 + 10);
+		program->position_x = x;
+		program->position_y = y;
+	}
 	if ((program->map).map[y][x] == 'C')
 		mlx_put_image_to_window(program->mlx_pointer, program->format.format, \
 			program->sprites.collect, x * 64 + 20, y * 64 + 20);

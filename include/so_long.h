@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/16 11:54:01 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:21:51 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ typedef struct s_program
 	void		*window;
 	char		*line;
 	char		*save_x;
+	int			fd;
+	int			count;
+	int			position_x;
+	int			position_y;
 	t_map		map;
 	t_format	format;
 	t_sprites	sprites;
@@ -79,7 +83,8 @@ void	save_images(t_program *program);
 void	sprites_to_windows(t_program *program, int x, int y);
 int		teclas_hooks(int keycode, t_program *program);
 void	exit_program(t_program *program);
-int		a_d(int keycode, t_program *program);
-int		w_s(int keycode, t_program *program);
+int		horizontal(int keycode, t_program *program);
+int		vertical(int keycode, t_program *program);
+int		move(t_program *program, int x, int y);
 
 #endif

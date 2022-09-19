@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/05 13:49:49 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:41:15 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,8 @@ void	check_argc_errors(int argc)
 		exit(0);
 	}
 }
+
+/* void	error_map(t_program *program);
+{
+	if 
+} */
