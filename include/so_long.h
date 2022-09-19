@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 12:21:51 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:11:29 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ typedef struct s_image
 	int			height;
 }	t_image;
 
+typedef struct s_counter
+{
+	int	p;
+	int	c;
+	int	e;
+}	t_counter;
+
 typedef struct s_program
 {
 	void		*mlx_pointer;
@@ -69,6 +76,7 @@ typedef struct s_program
 	t_image		pj;
 	t_image		collect;
 	t_image		exit;
+	t_counter	counter;
 }	t_program;
 
 void	check_argc_errors(int argc);
