@@ -56,4 +56,5 @@ void	ft_map(t_program *program, char **argv)
 	program->map.lines = count_lines(argv, program);
 	check_map(program, argv);
 	error_char_map(program);
+	check_rectangle(program);
 }
