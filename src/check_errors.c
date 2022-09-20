@@ -46,3 +46,19 @@ void	error_char_map(t_program *program)
 		exit(1);
 	}
 }
+
+void	check_rectangle(t_program program)
+{
+	int	i;
+
+	i = 0;
+	while (program.map.map[i])
+	{
+		if (ft_strlen(program.map.map[i] != program.map.length))
+		{
+			printf("The map is no rectangle\n");
+			exit (1);
+		}
+		i++;
+	}
+}
