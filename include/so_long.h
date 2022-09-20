@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 10:28:57 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:43:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	exit_program(t_program *program);
 int		horizontal(int keycode, t_program *program);
 int		vertical(int keycode, t_program *program);
 int		move(t_program *program, int x, int y);
-void	error_map(t_program *program);
+void	error_char_map(t_program *program);
 void	counts(t_program *program);
 
 #endif

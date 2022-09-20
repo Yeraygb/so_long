@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:29:19 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:43:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	ft_map(t_program *program, char **argv)
 {
 	program->map.lines = count_lines(argv, program);
 	check_map(program, argv);
-	error_map(program);
+	error_char_map(program);
 }

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:51:54 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:43:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_argc_errors(int argc)
 	}
 }
 
-void	error_map(t_program *program)
+void	error_char_map(t_program *program)
 {
 	program->counter.p = 0;
 	program->counter.c = 0;

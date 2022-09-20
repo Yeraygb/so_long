@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:29:15 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 10:27:05 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:47:26 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 int	teclas_hooks(int keycode, t_program *program)
 {
 	int	i;
-	int	x;
-	int	y;
 
-	x = program->pj.width;
-	y = program->pj.height;
 	i = 0;
-	y = 0;
 	if (keycode == 53)
 		exit_program(program);
 	if (keycode == 0)
@@ -91,8 +86,19 @@ int	vertical(int keycode, t_program *program)
 
 void	exit_program(t_program *program)
 {
+	int	i;
+
+	i = 0;
 	mlx_destroy_window(program->mlx_pointer, program->format.format);
-	exit (1);
+	free(program->mlx_pointer);
+	while (program->map.map[i])
+	{
+		free(program->map.map[i]);
+		i++;
+	}
+	free(program->map.map);
+	free(program->map.read);
+	exit (0);
 }
 
 int	move(t_program *program, int x, int y)
