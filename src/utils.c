@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/12 13:38:05 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:49:50 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,29 @@ void	ft_putendl_fd(char *s, int fd)
 			i++;
 		}
 		write(fd, "\n", 1);
+	}
+}
+
+void	counts(t_program *program)
+{
+	int	i;
+
+	i = 0;
+	while (program->map.read[i])
+	{
+		if (program->map.read[i] == 'P')
+			program->counter.p++;
+		if (program->map.read[i] == 'C')
+			program->counter.c++;
+		if (program->map.read[i] == 'E')
+			program->counter.e++;
+		if (program->map.read[i] != 'P' && program->map.read[i] != 'C' \
+			&& program->map.read[i] != 'E' && program->map.read[i] != '0' \
+			&& program->map.read[i] != '1' && program->map.read[i] != '\n')
+		{
+			printf("Wrong map\n");
+			exit(1);
+		}
+		i++;
 	}
 }

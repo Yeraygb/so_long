@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:29:15 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:11:00 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:27:05 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ int	horizontal(int keycode, t_program *program)
 		x--;
 		move(program, x, y);
 		program->map.map[y][x + 1] = '0';
-		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
-			"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 	}
 	if (keycode == 2)
 	{
@@ -61,8 +59,6 @@ int	horizontal(int keycode, t_program *program)
 		x++;
 		move(program, x, y);
 		program->map.map[y][x - 1] = '0';
-		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
-			"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 	}
 	return (1);
 }
@@ -81,8 +77,6 @@ int	vertical(int keycode, t_program *program)
 		y++;
 		move(program, x, y);
 		program->map.map[y - 1][x] = '0';
-		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
-			"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 	}
 	if (keycode == 13)
 	{
@@ -91,8 +85,6 @@ int	vertical(int keycode, t_program *program)
 		y--;
 		move(program, x, y);
 		program->map.map[y + 1][x] = '0';
-		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
-			"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 	}
 	return (1);
 }

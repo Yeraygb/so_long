@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:15:40 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:51:54 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,23 @@ void	check_argc_errors(int argc)
 
 void	error_map(t_program *program)
 {
-	int	i;
-
-	i = 0;
-	while (program->map.read[i])
+	program->counter.p = 0;
+	program->counter.c = 0;
+	program->counter.e = 0;
+	counts(program);
+	if (program->counter.p < 1 || program->counter.p > 1)
 	{
-		if (program->map.read[i] == 'P')
-			program->counter.p++;
-		if (program->map.read[i] == 'C')
-			program->counter.c++;
-		if (program->map.read[i] == 'E')
-			program->counter.e++;
-		i++;
+		printf("Wrong map, not found character\n");
+		exit(1);
+	}
+	if (program->counter.c < 1)
+	{
+		printf("Wrong map, not found collectable\n");
+		exit(1);
+	}
+	if (program->counter.e < 1)
+	{
+		printf("Wrong map, not found exit\n");
+		exit(1);
 	}
 }

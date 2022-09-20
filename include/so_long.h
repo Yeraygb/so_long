@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:11:29 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:28:57 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ typedef struct s_counter
 	int	p;
 	int	c;
 	int	e;
+	int	move_count;
+	int	collec_count;
 }	t_counter;
 
 typedef struct s_program
@@ -94,5 +96,7 @@ void	exit_program(t_program *program);
 int		horizontal(int keycode, t_program *program);
 int		vertical(int keycode, t_program *program);
 int		move(t_program *program, int x, int y);
+void	error_map(t_program *program);
+void	counts(t_program *program);
 
 #endif
