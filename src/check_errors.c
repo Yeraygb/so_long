@@ -54,7 +54,7 @@ void	check_rectangle(t_program program)
 	i = 0;
 	while (program.map.map[i])
 	{
-		if (ft_strlen(program.map.map[i] != program.map.length))
+		if (ft_strlen(program.map.map[i]) != program.map.length)
 		{
 			printf("The map is no rectangle\n");
 			exit (1);
