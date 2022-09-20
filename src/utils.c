@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/19 15:49:50 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:07:40 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,11 @@ void	counts(t_program *program)
 		}
 		i++;
 	}
+}
+
+int	check_collects(t_program *program)
+{
+	if (program->counter.collec_count == program->counter.c)
+		return (1);
+	return (0);
 }

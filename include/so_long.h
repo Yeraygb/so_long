@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 11:43:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:09:06 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,11 @@ void	save_images(t_program *program);
 void	sprites_to_windows(t_program *program, int x, int y);
 int		teclas_hooks(int keycode, t_program *program);
 void	exit_program(t_program *program);
-int		horizontal(int keycode, t_program *program);
-int		vertical(int keycode, t_program *program);
+int		horizontal(int keycode, t_program *program, int x, int y);
+int		vertical(int keycode, t_program *program, int x, int y);
 int		move(t_program *program, int x, int y);
 void	error_char_map(t_program *program);
 void	counts(t_program *program);
+int		check_collects(t_program *program);
 
 #endif
