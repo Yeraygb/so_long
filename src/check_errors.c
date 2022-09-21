@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 11:43:20 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:41:31 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,18 @@ void	check_rectangle(t_program program)
 			exit (1);
 		}
 		i++;
+	}
+}
+
+void	check_ber(char **argv)
+{
+	int	i;
+
+	i = ft_strlen(argv[1]) - 1;
+	if ((argv[1][i] != 'r') || (argv[1][i - 1] != 'e')
+		|| (argv[1][i - 2] != 'b') || (argv[1][i - 3] != '.'))
+	{
+		ft_putendl_fd("The extension is incorrect", 2);
+		exit (1);
 	}
 }
