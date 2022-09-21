@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:17:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 12:19:19 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:47:42 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 
 	program.counter.collec_count = 0;
 	check_argc_errors(argc);
+	check_ber(argv);
 	ft_map(&program, argv);
 	program.mlx_pointer = mlx_init();
 	program.format.format = mlx_new_window(program.mlx_pointer, \

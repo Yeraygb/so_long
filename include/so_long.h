@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 13:09:06 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:51:52 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,7 @@ int		move(t_program *program, int x, int y);
 void	error_char_map(t_program *program);
 void	counts(t_program *program);
 int		check_collects(t_program *program);
+void	check_ber(char **argv);
+void	check_rectangle(t_program *program);
 
 #endif

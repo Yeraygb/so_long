@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/21 14:41:31 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:52:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void	error_char_map(t_program *program)
 	}
 }
 
-void	check_rectangle(t_program program)
+void	check_rectangle(t_program *program)
 {
 	int	i;
 
 	i = 0;
-	while (program.map.map[i])
+	while (program->map.map[i])
 	{
-		if (ft_strlen(program.map.map[i]) != program.map.length)
+		if (ft_strlen(program->map.map[i]) != program->map.length)
 		{
 			printf("The map is no rectangle\n");
 			exit (1);
