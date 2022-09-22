@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/21 14:51:52 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:58:47 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,10 @@ void	counts(t_program *program);
 int		check_collects(t_program *program);
 void	check_ber(char **argv);
 void	check_rectangle(t_program *program);
+void	check_walls(t_program *program);
+void	check_empty_fd(t_program *program);
+void	check_empty_map(t_program *program);
+void	wall_first_line(t_program *program);
+void	wall_last_line(t_program *program);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 10:52:14 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:52:56 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	count_lines(char **argv, t_program *program)
 	else
 	{
 		program->line = get_next_line(program->fd);
+		check_empty_map(program);
 		program->save_x = ft_substr(program->line, 0, ft_strlen(program->line));
 		program->map.read = malloc(sizeof(char));
 		program->map.read[0] = '\0';
@@ -40,6 +41,15 @@ int	count_lines(char **argv, t_program *program)
 		close(program->fd);
 	}
 	return (program->count);
+}
+
+void	check_empty_map(t_program *program)
+{
+	if (!program->line)
+	{
+		ft_putendl_fd("Wrong map: Empty map", 2);
+		exit (0);
+	}
 }
 
 void	check_map(t_program *program, char **argv)
@@ -71,5 +81,16 @@ void	ft_map(t_program *program, char **argv)
 	}
 	check_map(program, argv);
 	error_char_map(program);
+	check_empty_fd(program);
+	check_walls(program);
 	check_rectangle(program);
+}
+
+void	check_empty_fd(t_program *program)
+{
+	if (program->map.length == 0 || program->map.height == 0)
+	{
+		printf("Error: Empty map");
+		exit(0);
+	}
 }

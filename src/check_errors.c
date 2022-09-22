@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/21 14:52:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:55:14 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_argc_errors(int argc)
 	i = 0;
 	if (argc != 2)
 	{
-		ft_putendl_fd("Number of argument invalid\n", 2);
+		ft_putendl_fd("Number of argument invalid", 2);
 		exit(1);
 	}
 }
