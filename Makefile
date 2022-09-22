@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/20 11:17:20 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/22 11:44:50 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ $(NAME): $(OBJS)
 	@make -C minilibx
 	@cp minilibx/libmlx.a .
 	@$(FLAGS) $(LINKS) $(SRC) -o so_long
+
+.SILENT:
 
 all: $(NAME)
 
