@@ -32,7 +32,11 @@ int	teclas_hooks(int keycode, t_program *program)
 	if (keycode == 13)
 		i = vertical(keycode, program, x, y);
 	if (i == 1)
+	{
+		program->counter.move_count++;
+		
 		get_sprites(program);
+	}
 	return (1);
 }
 

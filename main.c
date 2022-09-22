@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_program	program;
 
 	program.counter.collec_count = 0;
+	program.counter.move_count = 0;
 	check_argc_errors(argc);
 	check_ber(argv);
 	ft_map(&program, argv);
