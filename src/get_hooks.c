@@ -34,7 +34,7 @@ int	teclas_hooks(int keycode, t_program *program)
 	if (i == 1)
 	{
 		program->counter.move_count++;
-		
+		ft_putendl_fd("Moves: %d", program->counter.move_count);
 		get_sprites(program);
 	}
 	return (1);
