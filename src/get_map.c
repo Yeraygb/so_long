@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 12:52:56 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 14:25:04 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check_empty_map(t_program *program)
 	}
 }
 
-void	check_map(t_program *program, char **argv)
+void	check_map(t_program *program)
 {
 	program->map.length = 0;
 	program->map.height = 0;
@@ -79,7 +79,7 @@ void	ft_map(t_program *program, char **argv)
 		}
 		i++;
 	}
-	check_map(program, argv);
+	check_map(program);
 	error_char_map(program);
 	check_empty_fd(program);
 	check_walls(program);

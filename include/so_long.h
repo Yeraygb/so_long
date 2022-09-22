@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 12:58:47 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 14:25:26 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	check_argc_errors(int argc);
 void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
 int		count_lines(char **argv, t_program *program);
-void	check_map(t_program *program, char **argv);
+void	check_map(t_program *program);
 char	**ft_split(char const *s, char c);
 void	ft_putendl_fd(char *s, int fd);
 void	get_sprites(t_program *program);

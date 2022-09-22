@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 12:55:14 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/22 14:26:41 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	check_rectangle(t_program *program)
 	i = 0;
 	while (program->map.map[i])
 	{
-		if (ft_strlen(program->map.map[i]) != program->map.length)
+		if ((int)ft_strlen(program->map.map[i]) != program->map.length)
 		{
 			printf("The map is no rectangle\n");
 			exit (1);

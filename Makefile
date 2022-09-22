@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/22 12:54:22 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/22 14:23:41 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = main.c \
 
 OBJS = $(SRC:.c=.o)
 LINKS =	-L . -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g3
-FLAGS = gcc  
+FLAGS = gcc -Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
 	@echo ✅ "\033[92;3;4mcompilation done\033[0m" ✅
@@ -33,7 +33,10 @@ $(NAME): $(OBJS)
 	@cp minilibx/libmlx.a .
 	@$(FLAGS) $(LINKS) $(SRC) -o so_long
 
-.SILENT:
+%.o : %.c
+	$(FLAGS) -c $< -o $@
+
+#.SILENT:
 
 all: $(NAME)
 
