@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/23 13:30:57 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:43:56 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int		d_hook(t_program *program, int x, int y);
 int		w_hook(t_program *program, int x, int y);
 int		s_hook(t_program *program, int x, int y);
 void	move_count(t_program *program);
+void	str_put(t_program *program);
 
 // ---------- Errors ---------- //
 
