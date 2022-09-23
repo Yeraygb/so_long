@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/09/22 14:23:41 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/09/23 13:16:10 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC = main.c \
 	src/get_next_line.c \
 	src/get_next_line_utils.c \
 	src/get_hooks.c \
-	src/check_errors2.c
+	src/check_errors2.c \
+	src/ft_itoa.c \
+	src/utils2.c
 
 OBJS = $(SRC:.c=.o)
 LINKS =	-L . -lmlx -framework OpenGL -framework AppKit -fsanitize=address -g3

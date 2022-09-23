@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 12:07:40 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 12:47:43 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ int	check_collects(t_program *program)
 	if (program->counter.collec_count == program->counter.c)
 		return (1);
 	return (0);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t	i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			write (fd, &s[i], 1);
+			i++;
+		}
+	}
 }

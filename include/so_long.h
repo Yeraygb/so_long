@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 14:50:25 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:30:57 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ typedef struct s_program
 
 char	**ft_split(char const *s, char c);
 void	ft_putendl_fd(char *s, int fd);
+char	*ft_itoa(int n);
+void	ft_putstr_fd(char *s, int fd);
 
 void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
@@ -98,6 +100,11 @@ int		horizontal(int keycode, t_program *program, int x, int y);
 int		vertical(int keycode, t_program *program, int x, int y);
 int		move(t_program *program, int x, int y);
 void	counts(t_program *program);
+int		a_hook(t_program *program, int x, int y);
+int		d_hook(t_program *program, int x, int y);
+int		w_hook(t_program *program, int x, int y);
+int		s_hook(t_program *program, int x, int y);
+void	move_count(t_program *program);
 
 // ---------- Errors ---------- //
 

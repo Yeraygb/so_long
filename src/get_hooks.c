@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:29:15 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 13:09:22 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:31:22 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,30 @@ int	teclas_hooks(int keycode, t_program *program)
 	if (keycode == 53)
 		exit_program(program);
 	if (keycode == 0)
-		i = horizontal(keycode, program, x, y);
+		i = a_hook(program, x, y);
 	if (keycode == 1)
-		i = vertical(keycode, program, x, y);
+		i = s_hook(program, x, y);
 	if (keycode == 2)
-		i = horizontal(keycode, program, x, y);
+		i = d_hook(program, x, y);
 	if (keycode == 13)
-		i = vertical(keycode, program, x, y);
+		i = w_hook(program, x, y);
 	if (i == 1)
 	{
 		program->counter.move_count++;
-		ft_putendl_fd("Moves: %d", program->counter.move_count);
+		move_count (program);
 		get_sprites(program);
 	}
 	return (1);
 }
 
-int	horizontal(int keycode, t_program *program, int x, int y)
+/* int	horizontal(int keycode, t_program *program, int x, int y)
 {
 	x = program->position_x;
 	y = program->position_y;
 	if (keycode == 0)
 	{
+		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/pjleft.xpm", &program->pj.width, &program->pj.height);
 		if (program->map.map[y][x - 1] == '1')
 			return (0);
 		if (program->map.map[y][x - 1] == 'E' && check_collects(program) == 0)
@@ -56,6 +58,8 @@ int	horizontal(int keycode, t_program *program, int x, int y)
 	}
 	if (keycode == 2)
 	{
+		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/pjright.xpm", &program->pj.width, &program->pj.height);
 		if (program->map.map[y][x + 1] == '1')
 			return (0);
 		if (program->map.map[y][x + 1] == 'E' && check_collects(program) == 0)
@@ -65,14 +69,16 @@ int	horizontal(int keycode, t_program *program, int x, int y)
 		program->map.map[y][x - 1] = '0';
 	}
 	return (1);
-}
+} */
 
-int	vertical(int keycode, t_program *program, int x, int y)
+/* int	vertical(int keycode, t_program *program, int x, int y)
 {
 	x = program->position_x;
 	y = program->position_y;
 	if (keycode == 1)
 	{
+		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
 		if (program->map.map[y + 1][x] == '1')
 			return (0);
 		if (program->map.map[y + 1][x] == 'E' && check_collects(program) == 0)
@@ -83,6 +89,8 @@ int	vertical(int keycode, t_program *program, int x, int y)
 	}
 	if (keycode == 13)
 	{
+		program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
+		"./sprites/pjback.xpm", &program->pj.width, &program->pj.height);
 		if (program->map.map[y - 1][x] == '1')
 			return (0);
 		if (program->map.map[y - 1][x] == 'E' && check_collects(program) == 0)
@@ -92,7 +100,7 @@ int	vertical(int keycode, t_program *program, int x, int y)
 		program->map.map[y + 1][x] = '0';
 	}
 	return (1);
-}
+} */
 
 void	exit_program(t_program *program)
 {
