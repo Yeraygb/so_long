@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 14:25:04 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:41:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	check_empty_fd(t_program *program)
 {
 	if (program->map.length == 0 || program->map.height == 0)
 	{
-		printf("Error: Empty map");
+		ft_putendl_fd("Error: Empty map", 2);
 		exit(0);
 	}
 }

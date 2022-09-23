@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 11:01:08 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/23 12:47:43 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:42:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	counts(t_program *program)
 			&& program->map.read[i] != 'E' && program->map.read[i] != '0' \
 			&& program->map.read[i] != '1' && program->map.read[i] != '\n')
 		{
-			printf("Wrong map\n");
+			ft_putendl_fd("Wrong map", 2);
 			exit(1);
 		}
 		i++;

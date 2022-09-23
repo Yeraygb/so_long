@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/22 14:26:41 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:39:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ void	error_char_map(t_program *program)
 	counts(program);
 	if (program->counter.p < 1 || program->counter.p > 1)
 	{
-		printf("Wrong map, not found character\n");
+		ft_putendl_fd("Wrong map, not found character", 2);
 		exit(1);
 	}
 	if (program->counter.c < 1)
 	{
-		printf("Wrong map, not found collectable\n");
+		ft_putendl_fd("Wrong map, not found collectable", 2);
 		exit(1);
 	}
 	if (program->counter.e < 1)
 	{
-		printf("Wrong map, not found exit\n");
+		ft_putendl_fd("Wrong map, not found exit", 2);
 		exit(1);
 	}
 }
