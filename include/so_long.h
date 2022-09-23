@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/23 15:43:56 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:31:41 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ char	**ft_split(char const *s, char c);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
+
+// ---------- So_long ---------- //
 
 void	ft_map(t_program *program, char **argv);
 void	free_double_array(char **trash);
