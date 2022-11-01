@@ -30,7 +30,7 @@ void	flood_fill(t_program *program)
 	fill(program->map.map, size, begin, tab[begin.y][begin.x]);
 }
 
-/* void	way(t_program *program)
+void	way(t_program *program)
 {
 	if (program->map.map[y][x] == '0')
 	{
@@ -67,4 +67,4 @@ void	searchingway(t_program *program)
 		ft_putendl_fd("Wrong map: no way", 2);
 		exit (0);
 	}
-} */
+}
