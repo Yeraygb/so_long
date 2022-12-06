@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:44:50 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/23 16:39:13 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/06 13:09:39 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	error_char_map(t_program *program)
 		ft_putendl_fd("Wrong map, not found collectable", 2);
 		exit(1);
 	}
-	if (program->counter.e < 1)
+	if (program->counter.e < 1 || program->counter.e > 1)
 	{
 		ft_putendl_fd("Wrong map, not found exit", 2);
 		exit(1);

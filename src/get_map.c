@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/03 11:05:57 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/06 13:07:04 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,26 @@ void	check_empty_map(t_program *program)
 
 void	check_map(t_program *program)
 {
+	int	i;
+
+	i = 0;
+	while (program->map.read[i])
+	{
+		if (program->map.read[i] == '\n')
+		{	
+			if (program->map.read[0] == '\n')
+			{
+				ft_putendl_fd("Empty line", 2);
+				exit (0);
+			}
+			if (program->map.read[i + 1] == '\n')
+			{
+				ft_putendl_fd("Empty line", 2);
+				exit (0);
+			}
+		}
+		i++;
+	}
 	program->map.length = 0;
 	program->map.height = 0;
 	program->map.map = ft_split(program->map.read, '\n');
@@ -63,22 +83,7 @@ void	check_map(t_program *program)
 
 void	ft_map(t_program *program, char **argv)
 {
-	int	i;
-
-	i = 0;
 	program->map.lines = count_lines(argv, program);
-	while (program->map.read[i])
-	{
-		if (program->map.read[i] == '\n')
-		{
-			if (program->map.read[i + 1] && program->map.read[i + 1] == '\n')
-			{
-				ft_putendl_fd("Empty line", 2);
-				exit (0);
-			}
-		}
-		i++;
-	}
 	check_map(program);
 	check_rectangle(program);
 	error_char_map(program);
