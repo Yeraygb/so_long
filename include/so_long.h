@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/23 16:31:41 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:25:36 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,7 @@ void	check_empty_fd(t_program *program);
 void	check_empty_map(t_program *program);
 void	wall_first_line(t_program *program);
 void	wall_last_line(t_program *program);
+int		do_you_know_the_way(t_program *program);
+int		check_correct_way(t_program *program, char **tempmap);
 
 #endif
