@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/12/08 12:59:57 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/12/14 13:01:50 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,11 @@ SRC = main.c \
 	src/get_hooks.c \
 	src/check_errors2.c \
 	src/ft_itoa.c \
-	src/utils2.c
-
+	src/utils2.c \
+	src/way.c \
+	
 OBJS = $(SRC:.c=.o)
-LINKS =	-L . -lmlx -framework OpenGL -framework AppKit  -g3 -fsanitize=address
+LINKS =	-L . -lmlx -framework OpenGL -framework AppKit  -g3 #-fsanitize=address
 FLAGS = gcc -Wall -Werror -Wextra
 
 $(NAME): $(OBJS)

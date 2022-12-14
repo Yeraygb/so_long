@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/14 10:52:44 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:13:18 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,22 @@ void	check_map(t_program *program)
 
 void	ft_map(t_program *program, char **argv)
 {
+	int	i;
+
+	i = 0;
 	program->map.lines = count_lines(argv, program);
 	check_map(program);
 	check_rectangle(program);
 	error_char_map(program);
 	check_empty_fd(program);
 	check_walls(program);
-	error_char_map(program);
+/* 	error_char_map(program);
+	while (program->map.read[i])
+	{
+		if (program->map.read[i] == 'C')
+			program->counter.c++;
+		i++;
+	} */
 }
 
 void	check_empty_fd(t_program *program)
