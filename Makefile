@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/12/14 13:01:50 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/12/14 15:29:25 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC = main.c \
 	src/way.c \
 	
 OBJS = $(SRC:.c=.o)
-LINKS =	-L . -lmlx -framework OpenGL -framework AppKit  -g3 #-fsanitize=address
+LINKS =	-L . -lmlx -framework OpenGL -framework AppKit  -g3 -fsanitize=address
 FLAGS = gcc -Wall -Werror -Wextra
 
 $(NAME): $(OBJS)

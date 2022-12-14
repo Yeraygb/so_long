@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:37:36 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/14 15:18:38 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:49:12 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ int	check_correct_way(t_program *program, char **temp, int y, int x)
 			if (check_correct_way(program, temp, y + 1, x) \
 				|| check_correct_way(program, temp, y + 1, x) \
 				|| check_correct_way(program, temp, y - 1, x) \
-				|| check_correct_way(program, temp, y , x + 1) \
-				|| check_correct_way(program, temp, y , x - 1))
+				|| check_correct_way(program, temp, y, x + 1) \
+				|| check_correct_way(program, temp, y, x - 1))
 				return (1);
 		}
 	}
