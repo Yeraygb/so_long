@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:37:36 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/14 14:00:17 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:18:38 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,47 @@ char	*ft_strdup(const char *s1)
 	return (s2);
 }
 
+void	player_postion(t_program *program, t_variables *variables)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (program->map.map[i])
+	{
+		j = 0;
+		while (program->map.map[i][j])
+		{
+			if (program->map.map[i][j] == 'P')
+			{
+				variables->x = j;
+				variables->y = i;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	freetheway(char **tempmap)
+{
+	int	i;
+
+	i = 0;
+	while (tempmap[i])
+	{
+		free(tempmap[i]);
+		i++;
+	}
+	free(tempmap);
+}
+
 int	do_you_know_the_way(t_program *program)
 {
-	char	**tempmap;
-	int		i;
-	int		j;
-	int		a;
-	int		x;
-	int		y;
+	t_variables	variables;
+	char		**tempmap;
+	int			i;
 
-	j = 0;
 	tempmap = malloc((program->map.height + 1) * sizeof(char *));
 	if (!tempmap)
 		return (0);
@@ -54,33 +85,13 @@ int	do_you_know_the_way(t_program *program)
 		i++;
 	}
 	tempmap[i] = 0;
-	while (program->map.map[j])
-	{
-		a = 0;
-		while (program->map.map[j][a])
-		{
-			if (program->map.map[j][a] == 'P')
-			{
-				x = a;
-				y = j;
-			}
-			a++;
-		}
-		j++;
-	}
-	printf("y: %d\nx: %d\n", y, x);
-	if (!check_correct_way(program, tempmap, y, x))
+	player_postion(program, &variables);
+	if (!check_correct_way(program, tempmap, variables.y, variables.x))
 	{
 		ft_putendl_fd("Error", 2);
 		return (0);
 	}
-	i = 0;
-	while (tempmap[i])
-	{
-		free(tempmap[i]);
-		i++;
-	}
-	free(tempmap);
+	freetheway(tempmap);
 	return (1);
 }
 
@@ -89,12 +100,6 @@ int	check_correct_way(t_program *program, char **temp, int y, int x)
 	static int	collectable = 0;
 	static int	count_exit = 0;
 
-	// int i = 0;
-	// while (temp[i])
-	// {
-	// 	printf("%s\n", temp[i]);
-	// 	i++;
-	// }
 	if (temp[y][x] == 'E')
 	{
 		temp[y][x] = '?';
@@ -110,10 +115,10 @@ int	check_correct_way(t_program *program, char **temp, int y, int x)
 				collectable++;
 			temp[y][x] = '?';
 			if (check_correct_way(program, temp, y + 1, x) \
-			|| check_correct_way(program, temp, y + 1, x) \
-			|| check_correct_way(program, temp, y - 1, x) \
-			|| check_correct_way(program, temp, y , x + 1) \
-			|| check_correct_way(program, temp, y , x - 1))
+				|| check_correct_way(program, temp, y + 1, x) \
+				|| check_correct_way(program, temp, y - 1, x) \
+				|| check_correct_way(program, temp, y , x + 1) \
+				|| check_correct_way(program, temp, y , x - 1))
 				return (1);
 		}
 	}

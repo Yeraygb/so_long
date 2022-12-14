@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:34:57 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/14 12:21:52 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:18:08 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ typedef struct s_counter
 	int	collec_count;
 }	t_counter;
 
+typedef struct s_variables
+{
+	int	x;
+	int	y;
+}	t_variables;
+
 typedef struct s_program
 {
 	void		*mlx_pointer;
@@ -86,6 +92,7 @@ typedef struct s_program
 char	**ft_split(char const *s, char c);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
+char	*ft_strdup(const char *s1);
 void	ft_putstr_fd(char *s, int fd);
 
 // ---------- So_long ---------- //
@@ -108,6 +115,7 @@ int		w_hook(t_program *program, int x, int y);
 int		s_hook(t_program *program, int x, int y);
 void	move_count(t_program *program);
 void	str_put(t_program *program);
+void	freetheway(char **tempmap);
 
 // ---------- Errors ---------- //
 
@@ -124,5 +132,6 @@ void	wall_first_line(t_program *program);
 void	wall_last_line(t_program *program);
 int		do_you_know_the_way(t_program *program);
 int		check_correct_way(t_program *program, char **tempmap, int x, int y);
+void	player_postion(t_program *program, t_variables *variables);
 
 #endif

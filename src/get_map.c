@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:56:18 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/14 12:13:18 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:14:44 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,7 @@ void	ft_map(t_program *program, char **argv)
 	error_char_map(program);
 	check_empty_fd(program);
 	check_walls(program);
-/* 	error_char_map(program);
-	while (program->map.read[i])
-	{
-		if (program->map.read[i] == 'C')
-			program->counter.c++;
-		i++;
-	} */
+	//error_char_map(program);
 }
 
 void	check_empty_fd(t_program *program)
