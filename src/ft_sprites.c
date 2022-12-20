@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 10:43:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/09/20 12:47:02 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/20 12:45:36 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,25 @@ void	save_images(t_program *program)
 {
 	program->sprites.floor = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/floor.xpm", &program->floor.width, &program->floor.height);
+	if (!program->sprites.floor)
+		exit (2);
 	program->sprites.wall = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/walls.xpm", &program->wall.width, &program->wall.height);
+	if (!program->sprites.wall)
+		exit (2);
 	program->sprites.pj = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/pjfront.xpm", &program->pj.width, &program->pj.height);
+	if (!program->sprites.pj)
+		exit (2);
 	program->sprites.collect = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/collectable.xpm", &program->collect.width, \
 		&program->collect.height);
+	if (!program->sprites.collect)
+		exit (2);
 	program->sprites.exit = mlx_xpm_file_to_image(program->mlx_pointer, \
 		"./sprites/exit.xpm", &program->exit.width, &program->exit.height);
+	if (!program->sprites.exit)
+		exit (2);
 }
 
 void	sprites_to_windows(t_program *program, int x, int y)
